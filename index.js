@@ -14,7 +14,7 @@ const nylas = Nylas.with(process.env.ACCESS_TOKEN);
 const draft = new Draft.default(nylas, {
   subject: "With Love, from Nylas",
   body: "Well well well...",
-  to: [{ name: "Recipient name", email: "process.env.SENDER_ADDRESS" }],
+  to: [{ name: "Recipient name", email: process.env.SENDER_ADDRESS }],
 });
 
 // Send the email
