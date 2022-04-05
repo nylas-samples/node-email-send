@@ -16,7 +16,7 @@ You'll need the following values:
 ACCESS_TOKEN = ""
 CLIENT_ID = ""
 CLIENT_SECRET = ""
-SENDER_ADDRESS = ""
+RECIPIENT_ADDRESS = ""
 ```
 
 Add the above values to a new `.env` file:
