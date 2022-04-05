@@ -1,8 +1,6 @@
-import dotenv from "dotenv";
+import dotenv from "dotenv/config.js";
 import Nylas from "nylas";
 import Draft from "nylas/lib/models/draft.js";
-
-dotenv.config();
 
 Nylas.config({
   clientId: process.env.CLIENT_ID,
