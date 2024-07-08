@@ -42,7 +42,7 @@ $ node index.js
 When your message is successfully sent, you'll get the following output in your terminal:
 
 ```text
-Email Send: ...)
+Email Send: send message details
 ```
 
 ## Learn more
