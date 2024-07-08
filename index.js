@@ -1,26 +1,28 @@
-// Import your dependencies
-import dotenv from "dotenv/config.js";
-import Nylas from "nylas";
-import Draft from "nylas/lib/models/draft.js";
+import 'dotenv/config';
+import Nylas from 'nylas';
 
-// Configure your Nylas client
-Nylas.config({
-  clientId: process.env.CLIENT_ID,
-  clientSecret: process.env.CLIENT_SECRET,
-});
-const nylas = Nylas.with(process.env.ACCESS_TOKEN);
+const NylasConfig = {
+  apiKey: process.env.NYLAS_API_KEY,
+  apiUri: process.env.NYLAS_API_URI,
+};
 
-// Create a draft email
-const draft = new Draft.default(nylas, {
-  subject: "With Love, from Nylas",
-  body: "Well well well...",
-  to: [{ name: "Recipient name", email: process.env.RECIPIENT_ADDRESS }],
-});
+const nylas = new Nylas(NylasConfig);
 
-// Send the email
-try {
-  const message = await draft.send();
-  console.log(`Message "${message.subject}" was sent with ID ${message.id}`);
-} catch (err) {
-  console.error("Error:\n", err);
+async function sendEmail() {
+  try {
+    const sentMessage = await nylas.messages.send({
+        identifier: process.env.USER_GRANT_ID,
+        requestBody: {
+          to: [{ name: "Team DevRel", email: process.env.RECIPIENT_EMAIL}],
+          subject: "With Love, from Nylas",
+          body: "Hi, I'm using the Nylas Email API to send a message!",
+        },
+    });
+    
+    console.log('Email sent:', sentMessage);
+  } catch (error) {
+    console.error('Error sending email:', error);
+  }
 }
+
+sendEmail();

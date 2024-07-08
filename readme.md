@@ -13,10 +13,10 @@ This sample will show you to easily send an email with the Nylas Node.js SDK.
 You'll need the following values:
 
 ```text
-ACCESS_TOKEN = ""
-CLIENT_ID = ""
-CLIENT_SECRET = ""
-RECIPIENT_ADDRESS = ""
+NYLAS_API_KEY = ""
+NYLAS_API_URI = ""
+USER_GRANT_ID = ""
+RECIPIENT_EMAIL = ""
 ```
 
 Add the above values to a new `.env` file:
@@ -42,7 +42,7 @@ $ node index.js
 When your message is successfully sent, you'll get the following output in your terminal:
 
 ```text
-Message "With Love, from Nylas" was sent with ID 111111111111111111
+Email Send: ...)
 ```
 
 ## Learn more
