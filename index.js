@@ -11,7 +11,7 @@ const nylas = new Nylas(NylasConfig);
 async function sendEmail() {
   try {
     const sentMessage = await nylas.messages.send({
-        identifier: process.env.USER_GRANT_ID,
+        identifier: process.env.NYLAS_GRANT_ID,
         requestBody: {
           to: [{ name: "Team DevRel", email: process.env.RECIPIENT_EMAIL}],
           subject: "With Love, from Nylas",
