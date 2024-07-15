@@ -15,7 +15,7 @@ You'll need the following values:
 ```text
 NYLAS_API_KEY = ""
 NYLAS_API_URI = ""
-USER_GRANT_ID = ""
+NYLAS_GRANT_ID = ""
 RECIPIENT_EMAIL = ""
 ```
 
